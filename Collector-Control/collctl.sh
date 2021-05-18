@@ -1,7 +1,7 @@
 #!/bin/bash
 #NAME: Todd Keyser
 #DATE: 05-13-2021
-#Version: 1.1
+#Version: 1.0
 
 # For Collectors that run without root
 # No arguments checks to see if the Collector is running and returns the pid if it is
