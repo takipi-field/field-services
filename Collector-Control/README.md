@@ -9,28 +9,15 @@ This is a script for starting, stoping, and checking the status of a Contoller w
 ```
 
 ## Examples
+To start the Collector
 ```console
-$ ./collctl.sh start
-
-==============================
-The Collector has been started
-==============================
-
-$ ./collctl.sh
-
-=====================================
-Collector is running with PID: 722603
-=====================================
-
-$ ./collctl.sh stop
-
-==============================
-The Collector has been stopped
-==============================
-
-$./collctl.sh
-
-============================
-The Collector is not running
-============================
+./collctl.sh start
+```
+To stop the Collector
+```console
+./collctl.sh stop
+```
+To check the status of the Collector
+```console
+./collctl.sh
 ```
