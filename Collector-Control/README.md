@@ -4,12 +4,12 @@ This is a script for starting, stoping, and checking the status of a Contoller w
 
 ## Usage
 
-```
+```console
 ./collctl.sh [start|stop]
 ```
 
 ## Examples
-```
+```console
 $ ./collctl.sh start
 
 ==============================
