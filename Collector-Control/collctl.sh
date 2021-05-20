@@ -1,7 +1,7 @@
 #!/bin/bash
 #NAME: Todd Keyser
 #DATE: 05-13-2021
-#Version: 1.0
+#Version: 1.1
 
 # For Collectors that run without root
 # No arguments checks to see if the Collector is running and returns the pid if it is
@@ -21,11 +21,11 @@ colPid=$(ps -ef | grep takipi-service |  grep -v grep | awk '{ print $2}')
 # Argument checks and actions
 if [ -z "$colPid" ] && [ $# -eq 0 ]; then
   bprint "The Collector is not running"
-  exit 1
+  exit 0
 fi
 if [ $# -eq 0 ]; then
   bprint "The Collector is running with PID: $colPid"
-  exit 1
+  exit 0
 fi
 if [ $1 == "start" ]; then
   if [ ! -z "$colPid" ]; then
@@ -33,7 +33,7 @@ if [ $1 == "start" ]; then
   else
     nohup /opt/takipi/bin/takipi-service 1>/dev/null 2>/dev/null &
     bprint "The Collector has been started"
-    exit 1
+    exit 0 
   fi
 fi
 if [ $1 == "stop" ]; then
@@ -42,6 +42,6 @@ if [ $1 == "stop" ]; then
   else
     kill -9 $(ps -ef | grep takipi-service |  grep -v grep | awk '{ print $2}')
     bprint "The Collector has been stopped"
-    exit 1
+    exit 0
   fi
 fi
